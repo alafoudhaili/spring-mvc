@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Person</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Update Person:</h1>
+       
+    
+          
+      <form th:action="@{/updatePerson}"
+      	 
+         th:object="${personFormUpdate}" method="PUT">
+         First Name:
+         <input type="text" th:field="*{firstName}"  />    
+         <br/>
+         Last Name:
+         <input type="text" th:field="*{lastName}"  />     
+         <br/>
+         <input type="submit" value="Update" />
+      </form>
+       
+      <br/>
+       
+      <div th:if="${errorMessage}" th:text="${errorMessage}"
+         style="color:red;font-style:italic;">
+         ...
+      </div>
+       
+   </body>
+</html>
